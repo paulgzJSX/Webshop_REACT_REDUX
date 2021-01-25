@@ -1,7 +1,9 @@
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectCategory } from '../../actionCreators/ActionCreators'
 import { BreadCrumb, ArrowIcon, Links } from './Breadcrums.styles'
 
 const Breadcrumb = () => {
+    const dispatch = useDispatch()
     const selectedCategory = useSelector((state: any) => state.category)
     
     return (
@@ -9,7 +11,7 @@ const Breadcrumb = () => {
             <Links>
                 <span>Home</span>
                 <ArrowIcon />
-                <span>Categories</span>
+                <span onClick={() => dispatch(selectCategory('all'))}>Categories</span>
                 <ArrowIcon />
                 <span>{selectedCategory}</span>
             </Links>

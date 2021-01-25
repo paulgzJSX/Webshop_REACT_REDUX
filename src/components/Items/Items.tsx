@@ -11,7 +11,8 @@ export type Item = {
     price: number,
     category: Category,
     description: string,
-    image: string
+    image: string,
+    quantity: number
 }
 
 const getItemIds = (state: any) => state.items.map((item: Item) => item.id)
