@@ -1,11 +1,13 @@
+import { DISPLAY_BACKDROP, HIDE_BACKDROP } from '../actionCreators/Actions'
+
 const cartReducer = (state = false, action: any) => {
     console.log(state);
     
     switch (action.type) {
-        case 'DISPLAY_BACKDROP':
+        case DISPLAY_BACKDROP:
             return state = true
         
-        case 'HIDE_BACKDROP':
+        case HIDE_BACKDROP:
             return state = false
 
         default:

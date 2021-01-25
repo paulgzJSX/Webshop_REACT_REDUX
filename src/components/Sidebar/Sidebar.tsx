@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query'
 import { useDispatch } from 'react-redux'
+import { selectCategory } from '../../actionCreators/ActionCreators'
 import { fetchCategories } from './../../api/api'
 import { SideBar, SubCategories } from './Sidebar.styles'
 
@@ -16,12 +17,12 @@ const Sidebar = () => {
 
     return (
         <SideBar>
-            <h3 onClick={() => dispatch({ type: 'SELECT_CATEGORY', selectedCategory: 'all' })}>Categories</h3>
+            <h3 onClick={() => dispatch(selectCategory('all'))}>Categories</h3>
             <SubCategories>
                 {data?.map((category: Category, index: number) =>
                     <span
                         key={index}
-                        onClick={(e: any) => dispatch({ type: 'SELECT_CATEGORY', selectedCategory: e.target.innerHTML})}
+                        onClick={(e: any) => dispatch(selectCategory(e.target.innerHTML))}
                     >
                         {category}
                     </span>)}

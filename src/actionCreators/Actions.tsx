@@ -1,0 +1,7 @@
+export const DISPLAY_BACKDROP = 'DISPLAY_BACKDROP'
+export const HIDE_BACKDROP = 'HIDE_BACKDROP'
+
+export const SELECT_CATEGORY = 'SELECT_CATEGORY'
+
+export const ADD_ITEM = 'ADD_ITEM'
+export const REMOVE_ITEM = 'REMOVE_ITEM'

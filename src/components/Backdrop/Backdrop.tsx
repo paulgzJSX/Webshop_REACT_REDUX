@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
+import { hideBackdrop } from '../../actionCreators/ActionCreators'
 import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
@@ -18,7 +19,7 @@ export default function SimpleBackdrop() {
     const displayBackdrop = useSelector((state: any) => state.cart)
 
     return (
-        <Backdrop className={classes.backdrop} open={displayBackdrop} onClick={() => dispatch({ type: 'HIDE_BACKDROP' })}>
+        <Backdrop className={classes.backdrop} open={displayBackdrop} onClick={() => dispatch(hideBackdrop())}>
             <CircularProgress color="inherit" />
         </Backdrop>
     );

@@ -1,5 +1,6 @@
 import { useQuery } from 'react-query'
 import { useDispatch, useSelector } from 'react-redux'
+import { addItem, removeItem } from '../../actionCreators/ActionCreators'
 import { fetchProducts } from './../../api/api'
 import { AddToCart, MainContent, ItemCard } from './Items.styles'
 import { Category } from '../Sidebar/Sidebar'
@@ -26,9 +27,7 @@ const Items = () => {
     })
 
     const handleClick = (item: Item) => {
-        !itemIds.includes(item.id)
-           ? dispatch({ type: 'ADD_ITEM', item })
-           : dispatch({ type: 'REMOVE_ITEM', id: item.id })
+        !itemIds.includes(item.id) ? dispatch(addItem(item)) : dispatch(removeItem(item.id))
     }
 
     return (
