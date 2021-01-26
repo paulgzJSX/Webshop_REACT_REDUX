@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useClickOutside } from '../../hooks/hooks'
-import { decreaseQuantity, increaseQuantity, removeItem } from '../../actionCreators/ActionCreators'
+import { decreaseQuantity, increaseQuantity, removeItem } from '../../store/cart/actions'
 import { Tooltip } from '@material-ui/core'
 import { CartWrapper, Description, PriceQuntity, Product, ProductWrapper, TotalWrapper } from './Cart.styles'
 import { Item } from '../Items/Items'
@@ -9,7 +9,7 @@ import { Item } from '../Items/Items'
 const Cart = () => {
     const cartRef = useRef<any>()
     const dispatch = useDispatch()
-    const items = useSelector((state: any) => state.items)
+    const items = useSelector((state: any) => state.cart.items)
 
     useClickOutside(cartRef)
 

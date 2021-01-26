@@ -1,13 +1,11 @@
-import { DISPLAY_BACKDROP, HIDE_BACKDROP } from '../actionCreators/Actions'
+import { BackdropActionTypes, BackdropState, DISPLAY_BACKDROP, HIDE_BACKDROP } from './types'
 
-const initialState = {
-    show: false,
+const initialState: BackdropState = {
+    display: false,
     child: null
 }
 
-const backdropReducer = (state = initialState, action: any) => {
-    console.log(state);
-    
+const backdropReducer = (state = initialState, action: BackdropActionTypes): BackdropState => {
     switch (action.type) {
         case DISPLAY_BACKDROP:
             return {

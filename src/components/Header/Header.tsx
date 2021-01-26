@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { displayBackdrop } from '../../actionCreators/ActionCreators'
+import { displayBackdrop } from '../../store/backdrop/actions'
 import { Cart } from '../../components'
 import { CartIcon, HeaderWrapper, Logo, NavBar, RightMenu } from './Header.styles'
 
@@ -7,7 +7,7 @@ const navLinks = ['New', 'Gift Guide', 'Promo', 'Trends', 'Social']
 
 const Header = () => {
     const dispatch = useDispatch()
-    const itemsInCart = useSelector((state: any) => state.items.length)
+    const itemsInCart = useSelector((state: any) => state.cart.items.length)
 
     return (
         <HeaderWrapper>

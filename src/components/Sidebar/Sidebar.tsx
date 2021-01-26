@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query'
 import { useDispatch } from 'react-redux'
-import { selectCategory } from '../../actionCreators/ActionCreators'
+import { selectCategory } from '../../store/category/actions'
 import { fetchCategories } from './../../api/api'
 import { SideBar, SubCategories } from './Sidebar.styles'
 

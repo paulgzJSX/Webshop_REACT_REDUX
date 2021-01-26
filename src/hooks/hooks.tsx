@@ -1,6 +1,6 @@
-import { useEffect, useCallback } from 'react'
+import { useEffect, useCallback, Ref } from 'react'
 import { useDispatch } from 'react-redux'
-import { hideBackdrop } from '../actionCreators/ActionCreators'
+import { hideBackdrop } from '../store/backdrop/actions'
 
 export const useClickOutside = (ref: any) => {
     const dispatch = useDispatch()

@@ -1,10 +1,12 @@
 import { useQuery } from 'react-query'
 import { useDispatch, useSelector } from 'react-redux'
-import { addItem, removeItem, displayBackdrop } from '../../actionCreators/ActionCreators'
+import { addItem, removeItem } from '../../store/cart/actions'
+import { displayBackdrop } from '../../store/backdrop/actions'
 import { fetchProducts } from './../../api/api'
 import { ProductDetails } from '../../components'
 import { AddToCart, MainContent, ItemCard } from './Items.styles'
 import { Category } from '../Sidebar/Sidebar'
+import { RootState } from '../../index'
 
 export type Item = {
     id: number,
@@ -18,8 +20,8 @@ export type Item = {
 
 const Items = () => {
     const dispatch = useDispatch()
-    const itemIds = useSelector((state: any) => state.items.map((item: Item) => item.id))
-    const selectedCategory = useSelector((state: any) => state.category)
+    const itemIds = useSelector((state: any) => state.cart.items.map((item: Item) => item.id))
+    const selectedCategory = useSelector((state: RootState) => state.category.selectedCategory)
 
     const { data } = useQuery(['products', selectedCategory], () => fetchProducts(selectedCategory), {
         staleTime: Infinity
