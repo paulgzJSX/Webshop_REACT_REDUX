@@ -16,13 +16,10 @@ export type Item = {
     quantity: number
 }
 
-const getItemIds = (state: any) => state.items.map((item: Item) => item.id)
-const getSelectedCategory = (state: any) => state.category
-
 const Items = () => {
     const dispatch = useDispatch()
-    const itemIds = useSelector(getItemIds)
-    const selectedCategory = useSelector(getSelectedCategory)
+    const itemIds = useSelector((state: any) => state.items.map((item: Item) => item.id))
+    const selectedCategory = useSelector((state: any) => state.category)
 
     const { data } = useQuery(['products', selectedCategory], () => fetchProducts(selectedCategory), {
         staleTime: Infinity
