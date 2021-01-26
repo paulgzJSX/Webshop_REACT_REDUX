@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { displayBackdrop } from '../../actionCreators/ActionCreators'
+import { Cart } from '../../components'
 import { CartIcon, HeaderWrapper, Logo, NavBar, RightMenu } from './Header.styles'
 
 const navLinks = ['New', 'Gift Guide', 'Promo', 'Trends', 'Social']
@@ -23,7 +24,7 @@ const Header = () => {
                 <RightMenu>
                     <a href="#">Log in</a>
                     <button>Sign Up</button>
-                    <div onClick={() => dispatch(displayBackdrop())}>
+                    <div onClick={() => dispatch(displayBackdrop(<Cart />))}>
                         <CartIcon />
                         <span>{itemsInCart}</span>
                     </div>

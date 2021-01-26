@@ -1,22 +1,26 @@
-import React from 'react'
+import { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useClickOutside } from '../../hooks/hooks'
 import { decreaseQuantity, increaseQuantity, removeItem } from '../../actionCreators/ActionCreators'
 import { Tooltip } from '@material-ui/core'
 import { CartWrapper, Description, PriceQuntity, Product, ProductWrapper, TotalWrapper } from './Cart.styles'
 import { Item } from '../Items/Items'
 
-const Cart = React.forwardRef(({ ...props }, ref: any) => {
+const Cart = () => {
+    const cartRef = useRef<any>()
     const dispatch = useDispatch()
     const items = useSelector((state: any) => state.items)
 
+    useClickOutside(cartRef)
+
     return (
-        <CartWrapper ref={ref}>
+        <CartWrapper ref={cartRef}>
             <h2>Your cart items</h2>
             <ProductWrapper>
                 {items.map((item: Item) =>
                     <Product key={item.id}>
                         <Description>
-                            <img src={item.image} alt="" />
+                            <img src={item.image} alt={item.title} />
                             <p>{item.title}</p>
                         </Description>
                         <PriceQuntity>
@@ -36,6 +40,6 @@ const Cart = React.forwardRef(({ ...props }, ref: any) => {
             </TotalWrapper>
         </CartWrapper>
     )
-})
+}
 
 export default Cart

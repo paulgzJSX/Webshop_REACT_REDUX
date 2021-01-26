@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { Item } from '../components/Items/Items'
 import { HIDE_BACKDROP, DISPLAY_BACKDROP, ADD_ITEM, REMOVE_ITEM, SELECT_CATEGORY, DECREASE_QUANTITY, INCREASE_QUANTITY } from './Actions'
 
@@ -7,9 +8,10 @@ export function hideBackdrop() {
     }
 }
 
-export function displayBackdrop() {
+export function displayBackdrop(child: ReactNode) {
     return {
-        type: DISPLAY_BACKDROP
+        type: DISPLAY_BACKDROP,
+        child
     }
 }
 

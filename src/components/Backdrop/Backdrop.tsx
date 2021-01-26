@@ -15,25 +15,26 @@ const useStyles = makeStyles((theme: Theme) =>
 )
 
 export default function SimpleBackdrop() {
-    const cartRef = useRef<any>()
+    const childRef = useRef<any>()
     const classes = useStyles()
     const dispatch = useDispatch()
-    const displayBackdrop = useSelector((state: any) => state.cart)
+    const backdrop = useSelector((state: any) => state.backdrop)
 
-    useEffect(() => {
-        document.addEventListener('mousedown', handleClickOutside)
-        return () => document.removeEventListener('mousedown', handleClickOutside)
-    }, [])
+    // useEffect(() => {
+    //     document.addEventListener('mousedown', handleClickOutside)
+    //     return () => document.removeEventListener('mousedown', handleClickOutside)
+    // }, [])
 
-    const handleClickOutside = useCallback((e: any) => {
-        if (cartRef.current && !cartRef.current.contains(e.target)) {
-            dispatch(hideBackdrop())
-        }
-    }, [])
+    // const handleClickOutside = useCallback((e: any) => {
+    //     if (childRef.current && !childRef.current.contains(e.target)) {
+    //         dispatch(hideBackdrop())
+    //     }
+    // }, [])
 
     return (
-        <Backdrop className={classes.backdrop} open={displayBackdrop}>
-            <Cart ref={cartRef} />
+        <Backdrop className={classes.backdrop} open={backdrop.display}>
+            {backdrop.child}
+            {/* <Cart ref={childRef} /> */}
         </Backdrop>
     );
 }
