@@ -5,6 +5,10 @@ export const MainContent = styled.main`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1rem;
+
+    @media (max-width: 1068px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 `
 
 export const AddToCart = styled.div<{ $type: boolean }>`

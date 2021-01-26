@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { JsxElement } from 'typescript'
 import { Item } from '../components/Items/Items'
 import { HIDE_BACKDROP, DISPLAY_BACKDROP, ADD_ITEM, REMOVE_ITEM, SELECT_CATEGORY, DECREASE_QUANTITY, INCREASE_QUANTITY } from './Actions'
 
@@ -8,7 +9,7 @@ export function hideBackdrop() {
     }
 }
 
-export function displayBackdrop(child: ReactNode) {
+export function displayBackdrop(child: ReactNode | JsxElement) {
     return {
         type: DISPLAY_BACKDROP,
         child
