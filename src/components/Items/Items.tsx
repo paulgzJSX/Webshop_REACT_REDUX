@@ -1,7 +1,8 @@
 import { useQuery } from 'react-query'
 import { useDispatch, useSelector } from 'react-redux'
-import { addItem, removeItem } from '../../actionCreators/ActionCreators'
+import { addItem, removeItem, displayBackdrop } from '../../actionCreators/ActionCreators'
 import { fetchProducts } from './../../api/api'
+import { ProductDetails } from '../../components'
 import { AddToCart, MainContent, ItemCard } from './Items.styles'
 import { Category } from '../Sidebar/Sidebar'
 
@@ -35,7 +36,7 @@ const Items = () => {
         <MainContent>
             {data?.map((item: Item) =>
                 <ItemCard key={item.id}>
-                    <img src={item.image} alt={item.title} />
+                    <img src={item.image} alt={item.title} onClick={() => dispatch(displayBackdrop(<ProductDetails item={item} />))} />
                     <h3>${item.price}</h3>
                     <p>{item.title}</p>
                     <AddToCart
