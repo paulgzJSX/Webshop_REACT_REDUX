@@ -49,8 +49,15 @@ export const PriceQuntity = styled.div`
         cursor: pointer;
     }
 
-    span {
+    .quantity {
         margin-left: .5rem;
+    }
+
+    .remove {
+        color: red;
+        font-weight: bold;
+        margin-left: .8rem;
+        cursor: pointer;
     }
 `
 

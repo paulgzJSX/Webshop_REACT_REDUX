@@ -1,9 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { decreaseQuantity, increaseQuantity, removeItem } from '../../actionCreators/ActionCreators'
+import { Tooltip } from '@material-ui/core'
 import { CartWrapper, Description, PriceQuntity, Product, ProductWrapper, TotalWrapper } from './Cart.styles'
 import { Item } from '../Items/Items'
 
-const Cart = React.forwardRef(({...props}, ref: any) => {
+const Cart = React.forwardRef(({ ...props }, ref: any) => {
     const dispatch = useDispatch()
     const items = useSelector((state: any) => state.items)
 
@@ -19,9 +21,12 @@ const Cart = React.forwardRef(({...props}, ref: any) => {
                         </Description>
                         <PriceQuntity>
                             <p>${(item.price * item.quantity).toFixed(2)}</p>
-                            <button onClick={() => dispatch({ type: 'DECREASE_QUANTITY', id: item.id })}>-</button>
-                            <span>{item.quantity}</span>
-                            <button onClick={() => dispatch({ type: 'INCREASE_QUANTITY', id: item.id })}>+</button>
+                            <button onClick={() => dispatch(decreaseQuantity(item.id))}>-</button>
+                            <span className='quantity'>{item.quantity}</span>
+                            <button onClick={() => dispatch(increaseQuantity(item.id))}>+</button>
+                            <Tooltip title='Remove from cart'>
+                                <span className='remove' onClick={() => dispatch(removeItem(item.id))}>X</span>
+                            </Tooltip>
                         </PriceQuntity>
                     </Product>)}
             </ProductWrapper>
