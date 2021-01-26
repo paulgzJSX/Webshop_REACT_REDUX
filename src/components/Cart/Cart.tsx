@@ -13,6 +13,8 @@ const Cart = () => {
 
     useClickOutside(cartRef)
 
+    const total = items.reduce((ack: number, item: Item) => ack + (item.quantity * item.price), 0)
+
     return (
         <CartWrapper ref={cartRef}>
             <h2>Your cart items</h2>
@@ -36,7 +38,7 @@ const Cart = () => {
             </ProductWrapper>
             <TotalWrapper>
                 <h3>Total:</h3>
-                <h3>$800.00</h3>
+                <h3>${total.toFixed(2)}</h3>
             </TotalWrapper>
         </CartWrapper>
     )
