@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Provider } from 'react-redux'
 import { createStore, combineReducers } from 'redux'
 import { backdropReducer, cartReducer, categoryReducer } from './store'
-import './index.css';
-import App from './App';
+import './index.css'
+import App from './App'
 
 const queryClient = new QueryClient()
 

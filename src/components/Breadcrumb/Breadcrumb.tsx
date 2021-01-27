@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { selectCategory } from '../../store/category/actions'
-import { RootState } from '../../index'
 import { BreadCrumb, ArrowIcon, Links } from './Breadcrums.styles'
+import { RootState } from '../../index'
 
 const Breadcrumb = () => {
     const dispatch = useDispatch()

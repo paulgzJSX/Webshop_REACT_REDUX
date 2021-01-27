@@ -1,10 +1,10 @@
 import { useRef } from 'react'
 import { useClickOutside } from '../../hooks/hooks' 
 import { ProductDetailsWrapper } from './ProductDetails.styles'
-import { Item } from '../Items/Items'
+import { Item } from '../../store/cart/types'
 
 const ProductDetails = ({ item }: { item: Item }) => {
-    const prodDetailsRef = useRef(null)
+    const prodDetailsRef = useRef<HTMLDivElement | null>(null)
 
     useClickOutside(prodDetailsRef)
 

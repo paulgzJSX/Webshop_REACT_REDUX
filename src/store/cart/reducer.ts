@@ -4,7 +4,7 @@ const initialState: ItemsState = {
     items: []
 }
 
-const cartReducer = (state: ItemsState = initialState, action: ItemsActionTypes) => {
+const cartReducer = (state: ItemsState = initialState, action: ItemsActionTypes): ItemsState => {
     switch (action.type) {
         case ADD_ITEM:
             return {

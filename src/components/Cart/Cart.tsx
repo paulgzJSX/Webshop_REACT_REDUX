@@ -4,22 +4,22 @@ import { useClickOutside } from '../../hooks/hooks'
 import { decreaseQuantity, increaseQuantity, removeItem } from '../../store/cart/actions'
 import { Tooltip } from '@material-ui/core'
 import { CartWrapper, Description, PriceQuntity, Product, ProductWrapper, TotalWrapper } from './Cart.styles'
-import { Item } from '../Items/Items'
+import { RootState } from '../..'
 
 const Cart = () => {
-    const cartRef = useRef<any>()
+    const cartRef = useRef<HTMLDivElement | null>(null)
     const dispatch = useDispatch()
-    const items = useSelector((state: any) => state.cart.items)
+    const items = useSelector((state: RootState) => state.cart.items)
 
     useClickOutside(cartRef)
 
-    const total = items.reduce((ack: number, item: Item) => ack + (item.quantity * item.price), 0)
+    const total = items.reduce((ack: number, item) => ack + (item.quantity * item.price), 0)
 
     return (
         <CartWrapper ref={cartRef}>
             <h2>Your cart items</h2>
             <ProductWrapper>
-                {items.map((item: Item) =>
+                {items.map(item =>
                     <Product key={item.id}>
                         <Description>
                             <img src={item.image} alt={item.title} />
