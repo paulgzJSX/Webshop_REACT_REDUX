@@ -1,3 +1,4 @@
+export { default as AddToCartButton } from './AddToCartButton/AddToCartButton'
 export { default as Breadcrumb } from './Breadcrumb/Breadcrumb'
 export { default as Backdrop } from './Backdrop/Backdrop'
 export { default as Cart } from './Cart/Cart'

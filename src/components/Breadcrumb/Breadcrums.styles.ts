@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { flexCenter, pallete } from '../../styles/Generic.styles'
-import { MdKeyboardArrowRight } from 'react-icons/md'
 
 export const BreadCrumb = styled.div`
     width: 100%;
@@ -25,9 +24,4 @@ export const Links = styled.div`
             color: ${pallete.purple};
         }   
     }
-`
-
-export const ArrowIcon = styled(MdKeyboardArrowRight)`
-    margin-right: .3rem;
-    opacity: .5;
 `

@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { displayBackdrop } from '../../store/backdrop/actions'
 import { Cart } from '../../components'
-import { CartIcon, HeaderWrapper, Logo, NavBar, RightMenu } from './Header.styles'
+import { HeaderWrapper, Logo, NavBar, RightMenu } from './Header.styles'
+import { CartIcon } from '../../icons/Icons.styles'
 import { RootState } from '../..'
 
 const navLinks = ['New', 'Gift Guide', 'Promo', 'Trends', 'Social']

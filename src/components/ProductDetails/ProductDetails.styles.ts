@@ -22,4 +22,9 @@ export const ProductDetailsWrapper = styled.div`
     p {
         margin-bottom: 1.5rem;
     }
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
 `

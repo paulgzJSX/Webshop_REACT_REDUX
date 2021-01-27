@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import { flexCenter, pallete } from '../../styles/Generic.styles'
+import { AddToCartBtn } from '../AddToCartButton/AddToCartButton.styles'
+import { pallete } from '../../styles/Generic.styles'
 
 export const MainContent = styled.main`
     padding: 1rem;
@@ -12,20 +13,6 @@ export const MainContent = styled.main`
     }
 `
 
-export const AddToCart = styled.div<{ $type: boolean }>`
-    position: absolute;
-    bottom: -3rem;
-    left: 0;
-    background-color: ${props => props.$type ? `${pallete.blue}` : `${pallete.purple}`};
-    color: ${pallete.white};
-    width: 100%;
-    height: 3rem;
-    z-index: 1;
-    ${flexCenter}
-    justify-content: center;
-    transition: .3s ease-in;
-`
-
 export const ItemCard = styled.div`
     position: relative;
     width: 15rem;
@@ -36,7 +23,7 @@ export const ItemCard = styled.div`
     cursor: pointer;
     overflow: hidden;
 
-    &:hover ${AddToCart} {
+    &:hover ${AddToCartBtn} {
         bottom: 0;
     }
 

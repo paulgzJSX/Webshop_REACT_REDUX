@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { flexCenterSpaceBetween, flexCenter, pallete } from '../../styles/Generic.styles'
-import { AiOutlineShoppingCart } from 'react-icons/ai'
 
 export const HeaderWrapper = styled.header`
     width: 85%;
@@ -75,11 +74,4 @@ export const RightMenu = styled.div`
         background-color: ${pallete.white};
         border-radius: 50%;
     }
-`
-
-export const CartIcon = styled(AiOutlineShoppingCart)`
-    font-size: 1.5rem;
-    font-weight: 200;
-    opacity: .5;
-    margin-left: 1rem;
 `
