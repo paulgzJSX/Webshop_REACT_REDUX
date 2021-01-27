@@ -14,6 +14,7 @@ const ProductDetails = ({ item }: { item: Item }) => {
             <img src={item.image} alt={item.title} />
             <p>{item.description}</p>
             <h2>Price: ${item.price}</h2>
+            <button>Add to cart</button>
         </ProductDetailsWrapper>
     )
 }

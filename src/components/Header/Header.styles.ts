@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { flexCenterSpaceBetween, flexCenter, pallete } from '../../styles/Generic.styles'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 
 export const HeaderWrapper = styled.header`
@@ -8,15 +9,14 @@ export const HeaderWrapper = styled.header`
 `
 
 export const Logo = styled.nav`
-    color: #9A9EA7;
+    color: ${pallete.grey};
     font-size: 1.3rem;
     margin-bottom: .3rem;
+    cursor: pointer;
 `
 
 export const NavBar = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    ${flexCenterSpaceBetween}
 
     ul {
         display: flex;
@@ -33,7 +33,7 @@ export const NavBar = styled.div`
                 opacity: .8;
 
                 &:hover {
-                    color: #EC5290;
+                    color: ${pallete.purple}
                 }
             }
         }
@@ -41,8 +41,7 @@ export const NavBar = styled.div`
 `
 
 export const RightMenu = styled.div`
-    display: flex;
-    align-items: center;
+    ${flexCenter}
     position: relative;
 
     a {
@@ -51,8 +50,8 @@ export const RightMenu = styled.div`
     }
 
     button {
-        background-color: #CA3165;
-        color: #fff;
+        background-color: ${pallete.purple};
+        color: ${pallete.white};
         outline: none;
         border: none;
         padding: .3rem .5rem;
@@ -70,10 +69,10 @@ export const RightMenu = styled.div`
         right: -.5rem;
         top: -.4rem;
         padding: .1rem;
-        color: #CA3165;
+        color: ${pallete.purple};
         font-size: .7rem;
         font-weight: bold;
-        background-color: #fff;
+        background-color: ${pallete.white};
         border-radius: 50%;
     }
 `

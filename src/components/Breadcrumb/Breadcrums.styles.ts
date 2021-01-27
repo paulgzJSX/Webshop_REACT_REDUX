@@ -1,18 +1,18 @@
 import styled from 'styled-components'
+import { flexCenter, pallete } from '../../styles/Generic.styles'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 
 export const BreadCrumb = styled.div`
     width: 100%;
     height: 40px;
-    background-color: #fff;
+    background-color: ${pallete.white};
     margin-bottom: .7rem;
 `
 
-export const Links = styled.div`
+export const Links = styled.div` 
+    ${flexCenter}
     width: 85%;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
     height: 100%;
 
     span {
@@ -22,7 +22,7 @@ export const Links = styled.div`
         cursor: pointer;
 
         &:hover {
-            color: #CA3165;
+            color: ${pallete.purple};
         }   
     }
 `

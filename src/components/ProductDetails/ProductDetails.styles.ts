@@ -1,12 +1,13 @@
 import styled from 'styled-components'
+import { pallete } from '../../styles/Generic.styles'
 
 export const ProductDetailsWrapper = styled.div`
     height: auto;
     width: 35rem;
     padding: 2rem;
-    background-color: #fff;
+    background-color: ${pallete.white};
     text-align: center;
-    color: #000;
+    color: ${pallete.black};
 
     h3 {
         margin-bottom: 1.5rem;

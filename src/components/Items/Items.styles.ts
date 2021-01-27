@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { flexCenter, pallete } from '../../styles/Generic.styles'
 
 export const MainContent = styled.main`
     padding: 1rem;
@@ -15,13 +16,12 @@ export const AddToCart = styled.div<{ $type: boolean }>`
     position: absolute;
     bottom: -3rem;
     left: 0;
-    background-color: ${props => props.$type ? 'blue' : '#CA3165'};
-    color: #fff;
+    background-color: ${props => props.$type ? `${pallete.blue}` : `${pallete.purple}`};
+    color: ${pallete.white};
     width: 100%;
     height: 3rem;
     z-index: 1;
-    display: flex;
-    align-items: center;
+    ${flexCenter}
     justify-content: center;
     transition: .3s ease-in;
 `
@@ -30,7 +30,7 @@ export const ItemCard = styled.div`
     position: relative;
     width: 15rem;
     height: 17rem;
-    background-color: #fff;
+    background-color: ${pallete.white};
     text-align: center;
     padding: 1rem;
     cursor: pointer;

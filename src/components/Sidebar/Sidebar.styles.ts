@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { pallete } from '../../styles/Generic.styles'
 
 export const SideBar = styled.aside`
     padding: 1rem;
@@ -6,7 +7,7 @@ export const SideBar = styled.aside`
 
     h3 {
         text-transform: uppercase;
-        color: #CA3165;
+        color: ${pallete.purple};
         cursor: pointer;
     }
 `
@@ -21,7 +22,7 @@ export const SubCategories = styled.div`
         cursor: pointer;
 
         &:hover {
-            color: #CA3165;
+            color: ${pallete.purple};
         }
     }
 `
