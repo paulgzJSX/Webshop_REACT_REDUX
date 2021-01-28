@@ -1,17 +1,12 @@
-import { useQuery } from 'react-query'
 import { useDispatch } from 'react-redux'
 import { selectCategory } from '../../store/category/actions'
-import { fetchCategories } from './../../api/api'
+import { useFetchCategories } from './../../api/api'
 import { SideBar, SubCategories } from './Sidebar.styles'
-import { Category } from '../../store/category/types'
 
 const Sidebar = () => {
     const dispatch = useDispatch()
-
-    const { data } = useQuery<Category[]>('categories', fetchCategories, {
-        staleTime: Infinity
-    })
-
+    const { data } = useFetchCategories()
+    
     return (
         <SideBar>
             <h3 onClick={() => dispatch(selectCategory('all'))}>Categories</h3>

@@ -1,21 +1,12 @@
-import { useQuery } from 'react-query'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { displayBackdrop } from '../../store/backdrop/actions'
-import { fetchProducts } from './../../api/api'
+import { useFetchProducts } from './../../api/api'
 import { ProductDetails, AddToCartButton } from '../../components'
 import { MainContent, ItemCard } from './Items.styles'
-import { RootState } from '../../index'
-import { Item } from '../../store/cart/types'
 
 const Items = () => {
     const dispatch = useDispatch()
-    const selectedCategory = useSelector((state: RootState) => state.category.selectedCategory)
-
-    const { data } = useQuery<Item[]>(
-        ['products', selectedCategory],
-        () => fetchProducts(selectedCategory),
-        { staleTime: Infinity }
-    )
+    const { data } = useFetchProducts()
 
     return (
         <MainContent>
