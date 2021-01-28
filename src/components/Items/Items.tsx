@@ -12,7 +12,11 @@ const Items = () => {
         <MainContent>
             {data?.map(item =>
                 <ItemCard key={item.id}>
-                    <img src={item.image} alt={item.title} onClick={() => dispatch(displayBackdrop(<ProductDetails item={item} />))} />
+                    <img
+                        src={item.image}
+                        alt={item.title}
+                        onClick={() => dispatch(displayBackdrop(<ProductDetails item={item} />))}
+                    />
                     <h3>${item.price}</h3>
                     <p>{item.title}</p>
                     <AddToCartButton item={item} type='popover' />
